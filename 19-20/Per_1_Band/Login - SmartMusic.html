@@ -1,0 +1,602 @@
+ 
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+				<script type="text/javascript">
+  (function(){
+
+    // Create a queue, but don't obliterate an existing one!
+    var analytics = window.analytics = window.analytics || [];
+
+    // If the real analytics.js is already on the page return.
+    if (analytics.initialize) return;
+
+    // If the snippet was invoked already show an error.
+    if (analytics.invoked) {
+      if (window.console && console.error) {
+        console.error('Segment snippet included twice.');
+      }
+      return;
+    }
+
+    // Invoked flag, to make sure the snippet
+    // is never invoked twice.
+    analytics.invoked = true;
+
+    // A list of the methods in Analytics.js to stub.
+    analytics.methods = [
+      'trackSubmit',
+      'trackClick',
+      'trackLink',
+      'trackForm',
+      'pageview',
+      'identify',
+      'reset',
+      'group',
+      'track',
+      'ready',
+      'alias',
+      'debug',
+      'page',
+      'once',
+      'off',
+      'on'
+    ];
+
+    // Define a factory to create stubs. These are placeholders
+    // for methods in Analytics.js so that you never have to wait
+    // for it to load to actually record data. The `method` is
+    // stored as the first argument, so we can replay the data.
+    analytics.factory = function(method){
+      return function(){
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift(method);
+        analytics.push(args);
+        return analytics;
+      };
+    };
+
+    // For each of our methods, generate a queueing stub.
+    for (var i = 0; i < analytics.methods.length; i++) {
+      var key = analytics.methods[i];
+      analytics[key] = analytics.factory(key);
+    }
+
+    // Define a method to load Analytics.js from our CDN,
+    // and that will be sure to only ever load it once.
+    analytics.load = function(key, options){
+      // Create an async script element based on your key.
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = 'https://cdn.segment.com/analytics.js/v1/'
+        + key + '/analytics.min.js';
+
+      // Insert our script next to the first script element.
+      var first = document.getElementsByTagName('script')[0];
+      first.parentNode.insertBefore(script, first);
+      analytics._loadOptions = options;
+    };
+
+    // Add a version to keep track of what's in the wild.
+    analytics.SNIPPET_VERSION = '4.1.0';
+
+    // Load Analytics.js with your key, which will automatically
+    // load the tools you've enabled for your account. Boosh!
+    analytics.load('G6q5IWGHZkZCuvhYgeBAReSFgGXwOI7a');
+
+    // Make the first page call to load the integrations. If
+    // you'd like to manually name or tag the page, edit or
+    // move this call however you'd like.
+    analytics.page();
+  })();   
+</script>
+				
+		<script type='application/ld+json'>
+		{
+			"@context": "https://schema.org/",
+			"@type": "Blog",
+			"about": "Music Education",
+			"audience": {
+				"@type": "Audience",
+				"audienceType": "Music Teachers",
+				"alternateName": "Music Educators",
+				"description": "People who teach band, string, orchestra, or choir at elementary, middle, and high schools, and college."
+			},
+			"keywords": "music education, music teacher resources"
+		}
+		</script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-2326290-1', 'auto', {allowLinker: true});
+			</script>
+				<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-7MGC');</script>
+				<script>
+			var _rollbarConfig = {
+				accessToken: "91e7cf0531874dc09c71c617ed11b40e",
+				captureUncaught: true,
+				captureUnhandledRejections: false,
+				captureIp: "anonymize",
+				ignoredMessages: [
+					"(unknown): Script error",
+					"(unknown): Script error.",
+					"Script error",
+					"Script error.",
+					"#67 (unknown): Script error.",
+					"[unhandledrejection] error getting `reason` from event",
+					"[unhandledrejection]",
+					"error getting `reason` from event",
+					"error getting \`reason\` from event",
+					"error getting 'reason' from event",
+					"error getting \'reason\' from event",
+					"error getting reason from event",
+					"Failed to execute 'postMessage' on 'Window': function (s){return eval(s);} could not be cloned.",
+					"document.getElementsByClassName.ToString is not a function",
+					"ReferenceError: Can\'t find variable: jQuery",
+					"Uncaught ReferenceError: jQuery is not defined",
+					"Uncaught TypeError: Cannot read property 'begin' of undefined",
+					"(unknown): Error loading script",
+					"Error: Access is denied.",
+					"jQuery"
+				],
+                autoInstrument: {
+					log: false
+				},
+				payload: {
+					environment: "production",
+					source_map_enabled: true
+				}
+			};
+			!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.7/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+			Rollbar.global({'maxItems': 5});
+		</script>
+				<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="apple-touch-icon" sizes="180x180" href="https://www.smartmusic.com/wp-content/themes/smartmusic/assets/images/favicons/smartmusic_180.png">
+		<link rel="icon" type="image/png" href="https://www.smartmusic.com/wp-content/themes/smartmusic/assets/images/favicons/sm_32_darker.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="https://www.smartmusic.com/wp-content/themes/smartmusic/assets/images/favicons/sm_16_darker.png" sizes="16x16">
+		<link rel="manifest" href="https://www.smartmusic.com/wp-content/themes/smartmusic/assets/images/favicons/manifest.json">
+		<meta name="theme-color" content="#37383a">
+		<meta name="msapplication-TileColor" content="#37383a">
+		<meta name="msapplication-TileImage" content="https://www.smartmusic.com/wp-content/themes/smartmusic/assets/images/favicons/smartmusic_150.png">
+		<meta name="msapplication-config" content="https://www.smartmusic.com/wp-content/themes/smartmusic/assets/images/favicons/browserconfig.xml" />
+		
+<!-- This site is optimized with the Yoast SEO plugin v13.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>SmartMusic | Music Learning Software for Educators &amp; Students</title>
+<meta name="description" content="SmartMusic is music learning software for educators and students. Make practicing and tracking student progress easy and fun."/>
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="canonical" href="https://www.smartmusic.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SmartMusic | Music Learning Software for Educators &amp; Students" />
+<meta property="og:description" content="SmartMusic is music learning software for educators and students. Make practicing and tracking student progress easy and fun." />
+<meta property="og:url" content="https://www.smartmusic.com/" />
+<meta property="og:site_name" content="SmartMusic" />
+<meta property="og:image" content="https://wpmedia.smartmusic.com/wp-content/uploads/2018/10/SM_HP1920x1080.jpg" />
+<meta property="og:image:secure_url" content="https://wpmedia.smartmusic.com/wp-content/uploads/2018/10/SM_HP1920x1080.jpg" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1080" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="SmartMusic is music learning software for educators and students. Make practicing and tracking student progress easy and fun." />
+<meta name="twitter:title" content="SmartMusic | Music Learning Software for Educators &amp; Students" />
+<meta name="twitter:site" content="@smartmusic" />
+<meta name="twitter:image" content="https://wpmedia.smartmusic.com/wp-content/uploads/2018/10/SM_HP1920x1080.jpg" />
+<meta name="twitter:creator" content="@smartmusic" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.smartmusic.com/#website","url":"https://www.smartmusic.com/","name":"SmartMusic","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":"https://www.smartmusic.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://www.smartmusic.com/#primaryimage","inLanguage":"en-US","url":"https://wpmedia.smartmusic.com/wp-content/uploads/2018/10/SM_HP1920x1080.jpg","width":1920,"height":1080},{"@type":"WebPage","@id":"https://www.smartmusic.com/#webpage","url":"https://www.smartmusic.com/","name":"SmartMusic | Music Learning Software for Educators &amp; Students","isPartOf":{"@id":"https://www.smartmusic.com/#website"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://www.smartmusic.com/#primaryimage"},"datePublished":"2016-08-24T22:47:04+00:00","dateModified":"2020-03-13T21:01:21+00:00","description":"SmartMusic is music learning software for educators and students. Make practicing and tracking student progress easy and fun."}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='v2-main-css'  href='https://www.smartmusic.com/wp-content/themes/smartmusic/assets-v2/css/dist/base/main.min.css?ver=1583167354' type='text/css' media='all' />
+<link rel='stylesheet' id='v2-theme-css'  href='https://www.smartmusic.com/wp-content/themes/smartmusic/assets-v2/css/dist/theme/theme.min.css?ver=1583167354' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.smartmusic.com/wp-includes/css/dist/block-library/style.min.css?ver=5.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mpp_gutenberg-css'  href='https://www.smartmusic.com/wp-content/plugins/metronet-profile-picture/dist/blocks.style.build.css?ver=2.3.10' type='text/css' media='all' />
+<link rel='stylesheet' id='v2-theme-forms-css'  href='https://www.smartmusic.com/wp-content/themes/smartmusic/assets-v2/css/dist/forms/theme-forms.min.css?ver=1583167354' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.smartmusic.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://www.smartmusic.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://www.smartmusic.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.smartmusic.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.smartmusic.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.3.2" />
+<link rel='shortlink' href='https://www.smartmusic.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.smartmusic.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.smartmusic.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.smartmusic.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.smartmusic.com%2F&#038;format=xml" />
+	</head>
+<body class="home page-template-default page page-id-4" ontouchstart="">
+
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-7MGC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    	
+    <div id="page" class="site">         
+<header class="site-header">
+
+    
+
+<nav class="nav-header nav-scrolling" role="menubar">
+
+    <div class="container force-inline">
+        <a class="site-logo" href="https://www.smartmusic.com/" rel="home" title="SmartMusic"><figure title="SmartMusic Home Page"><figcaption class="sr-only">SmartMusic Home</figcaption></figure></a>
+        <div class="mobile-menu-controls">
+            <a role="button" href="#" class="icon-toggle" data-toggle="modal" data-target="#menu-search-mobile"><span class="mm-icon mm-medium-search" data-icon></span><span class="sr-only">Search</span></a>
+            <a role="button" href="#" class="menu-toggle icon-toggle" data-toggle="#menu-header-wrapper" data-action="open"><span class="mm-icon mm-medium-hamburger" data-icon></span><span class="sr-only">Main menu</span></a>
+        </div>
+        <div id="menu-header-wrapper" class="menu-header-container"><ul id="menu-header-menu" class="menu"><li id="menu-item-32020" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32020"><a href="https://account.smartmusic.com/signup">try it free</a></li>
+<li id="menu-item-30426" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30426"><a href="https://www.smartmusic.com/features/">features</a></li>
+<li id="menu-item-26012" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26012"><a href="https://www.smartmusic.com/pricing/">pricing</a></li>
+<li id="menu-item-21177" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21177"><a href="https://www.smartmusic.com/training/">training</a></li>
+<li id="menu-item-21180" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21180"><a href="https://www.smartmusic.com/blog/">blog</a></li>
+<li id="menu-item-29376" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29376"><a href="https://www.smartmusic.com/login/">login</a></li>
+<li id="menu-item-32021" class="menu-try-free menu-item menu-item-type-custom menu-item-object-custom menu-item-32021"><a href="https://account.smartmusic.com/signup">try it free</a></li>
+</ul></div>            </div>
+</nav>
+<div class="modal fade mobile-search" id="menu-search-mobile" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+<form role="search" method="get" class="search-form" action="https://www.smartmusic.com/">
+	<label class="search-label">
+		<span class="sr-only">Search all of smartmusic.com</span>
+	</label>
+	<input type="search" class="search-field" placeholder="search smartmusic" value="" name="s" title="Search all of smartmusic.com">
+	<input type="hidden" value="any" name="post_type" />
+	<button type="submit" class="btn btn-lg btn-primary search-submit" aria-label="Submit"><span class="mm-icon mm-medium-search" data-icon></span></button>
+</form>            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-width-full btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>        <style>
+            .site-banner {
+                height: 650px;
+                background: rgba(187, 187, 187, 1);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-image: url('https://wpmedia.smartmusic.com/wp-content/uploads/2018/10/SM_HP1920x1080.jpg');
+            }
+        </style>
+        <section class="site-banner has-banner-image" role="banner">
+        
+<div class="container">
+            <h1 class="site-title text-color-white text-shadow-full text-align-center has-subheader">music practice transformed</h1>
+        <p class="subheader text-color-white text-shadow-full text-align-center">SmartMusic is a web-based suite of music education tools that support efficient practice, helping musicians to develop and grow.</p>
+        <a id="bannerTryFree" class="btn btn-md btn-primary btn-block btn-width-std btn-center-h" role="button" href="https://account.smartmusic.com/signup">try it free</a>
+        <script type="text/javascript">
+        window.addEventListener('load', (event) => {
+            document.getElementById("bannerTryFree").addEventListener("click", trackBannerTryFree);
+        });
+        function trackBannerTryFree() {
+            analytics.track('Product Clicked', {
+                    product_id: 'NULL',
+                    sku: 'NULL',
+                    name: 'Role Agnostic Try it Free',
+                    price: 0,
+                    quantity: 1,
+                    position: 2,
+                    url: 'https://account.smartmusic.com/signup?utm_source=smartmusic&utm_medium=site&utm_campaign=role_agnostic&utm_content=banner_try_free'
+            });
+        }
+            </script>
+    </div>    </section>
+</header>        <div id="content" class="page-wrap clearfix"> 
+	<div class="content-area" id="primary">
+		<main class="site-main spacing-lg-top" id="main" role="main">
+
+            <style>
+ul.pricing li::before {
+content: "•";
+display: inline-block;
+vertical-align: middle;
+font-size: 2rem;
+line-height: 1rem;
+margin-left: -1.25rem;
+margin-right: .5rem;
+}
+ul.pricing li::before {
+content: "";
+background-image: url(https://wpmedia.smartmusic.com/wp-content/uploads/2019/02/SM_Not-Included_Symbol%402x.png);
+background-size: 9px;
+height: 9px;
+width: 9px;
+border-radius: 50%;
+top: -1px;
+position: relative;
+}
+ul.pricing li.active::before {
+content: "";
+background-image: url(https://wpmedia.smartmusic.com/wp-content/uploads/2019/02/SM_Included_Symbol%402x.png);
+background-size: 9px;
+color: #fff;
+font-size: .5rem;
+padding-left: .1rem;
+line-height: .7rem;
+}
+ul.pricing li {
+color: #bfbcbc;
+list-style-type: none;
+margin-bottom: .75rem;
+}
+ul.pricing li.active {
+color: #575759;
+}
+img.home-icon {
+height: 84px;
+width: 84px;
+}
+.site-main.spacing-lg-top {
+padding-top:0px
+}
+.background-red {
+background-color: #EA7200;
+}
+@media screen and (min-width: 992px) {
+div.column-extra-spacing-left {
+padding-right: 35px;
+}
+div.column-extra-spacing-right {
+padding-left: 35px;
+}
+div.col-lg-6.spacing-sm-bottom {
+padding-bottom: 0;
+}
+.fixed-height-p {
+height: 4.7142rem;
+}
+}
+</style>
+<section class="spacing-md-top spacing-md-bottom background-red">
+<div class="container text-align-center">
+<h5 style="width:90%; margin-left:auto; margin-right:auto; margin-bottom: 1.5rem; color: #ffffff; line-height: 1.4;">We are committed to helping you maintain your students’ education in the face of the COVID-19 pandemic. For schools impacted by COVID-19 closures who do not already have a SmartMusic subscription, we are offering free access through June 30, 2020. Please contact us and let us know your needs.</h5>
+<div class="spacing-sm-top">
+<a class="btn btn-lg btn-primary btn-width-std btn-block btn-center-h" style="border-color: #ffffff;" role="button" href="https://makemusic2020.typeform.com/to/CpgwAG?utm_source=smartmusic&#038;utm_medium=site&#038;utm_campaign=form_banner">get started</a>
+</div>
+</div>
+</section>
+<section class="container spacing-md-bottom icon-row spacing-md-top">
+<div class="row">
+<div class="col-12 col-md-4 text-align-center">
+<img src="/wp-content/themes/smartmusic/assets-v2/images/home-icons/home_icon_practice-tools.svg" class="home-icon text-margin-bottom-1" title="practice tools"/></p>
+<h3>practice tools</h3>
+<p class="text-margin-bottom-3">A tuner, metronome, fingerings, and tools to loop and record are built in.</p>
+</div>
+<div class="col-12 col-md-4 text-align-center">
+<img src="/wp-content/themes/smartmusic/assets-v2/images/home-icons/home_icon_repertoire.svg" class="home-icon text-margin-bottom-1" title="repertoire"/></p>
+<h3>repertoire</h3>
+<p class="text-margin-bottom-3">An unrivaled music library accompanies performers at all levels.</p>
+</div>
+<div class="col-12 col-md-4 text-align-center">
+<img src="/wp-content/themes/smartmusic/assets-v2/images/home-icons/home_icon_immediate-feedback.svg" class="home-icon text-margin-bottom-1" title="immediate feedback"/></p>
+<h3>immediate feedback</h3>
+<p class="text-margin-bottom-3">Pitch and rhythm are automatically assessed.</p>
+</div>
+<div class="col-12 col-md-4 text-align-center">
+<img src="/wp-content/themes/smartmusic/assets-v2/images/home-icons/home_icon_sight-reading-builder.svg" class="home-icon text-margin-bottom-1" title="sight reading builder"/></p>
+<h3>sight reading builder</h3>
+<p class="text-margin-bottom-3">Build sight-reading skills with unlimited, customizable exercises.</p>
+</div>
+<div class="col-12 col-md-4 text-align-center">
+<img src="/wp-content/themes/smartmusic/assets-v2/images/home-icons/home_icon_music-notation.svg" class="home-icon text-margin-bottom-1" title="music notation"/></p>
+<h3>music notation</h3>
+<p class="text-margin-bottom-3">Import, edit, and create music notation for student assignments and more.</p>
+</div>
+<div class="col-12 col-md-4 text-align-center">
+<img src="/wp-content/themes/smartmusic/assets-v2/images/home-icons/home_icon_accompaniment.svg" class="home-icon text-margin-bottom-1" title="accompaniment"/></p>
+<h3>accompaniment</h3>
+<p class="text-margin-bottom-0">Perform the world’s greatest music with professionally-recorded accompaniments.</p>
+</div>
+</div>
+</section>
+<section class="spacing-lg background-gray-0">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 spacing-sm-bottom column-extra-spacing-left">
+<div class="background-white card align-items-center" style="height: 100%; padding: 3.5rem 2.5rem;">
+<div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+<p class="pricing-text-md">teacher</p>
+<h4 class="text-color-brand text-margin-bottom-0 pricing-text-xxl"><span class="pricing-text-align-top">$</span>80</h4>
+<p class="text-margin-bottom-2-5 font-size-p-md "><strong>/teacher/year</strong></p>
+<ul class="pricing text-margin-bottom-2-5">
+<li class="active">Full repertoire libary</li>
+<li class="active">Composition tool</li>
+<li class="active">Sight Reading Builder</li>
+<li class="active">Gradebook</li>
+</ul>
+<p><a id="homeTeachBuyNow" class="btn btn-md btn-primary btn-width-std text-margin-bottom-1" role="button" href="https://account.smartmusic.com/signup?utm_source=smartmusic&#038;utm_medium=site&#038;utm_campaign=teacher&#038;utm_content=home_buy_now">buy now</a><br /><a id="teachLearnMore" class="btn btn-md btn-secondary btn-width-std" role="button" href="/pricing/?utm_source=smartmusic&#038;utm_medium=site&#038;utm_campaign=teacher&#038;utm_content=home_learn_more">learn more</a></p>
+<p class="text-align-center font-size-p-sm text-margin-bottom-0">Special pricing is available for teachers who qualify. <a id="academicLearnMore" href="/pricing/#academic">Learn more</a>.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-6 spacing-sm-bottom column-extra-spacing-right">
+<div class="background-white card align-items-center" style="height: 100%; padding: 3.5rem 2.5rem;">
+<div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+<p class="pricing-text-md">performer</p>
+<h4 class="text-color-brand text-margin-bottom-0 pricing-text-xxl"><span class="pricing-text-align-top">$</span>40</h4>
+<p class="text-margin-bottom-2-5 font-size-p-md"><strong>/performer/year</strong></p>
+<ul class="pricing text-margin-bottom-2-5">
+<li class="active">Immediate feedback</li>
+<li class="active">Practice tools</li>
+<li class="active">Full repertoire libary</li>
+<li class="active">Professional accompaniment</li>
+</ul>
+<p><a id="homePerformBuyNow" class="btn btn-md btn-primary btn-width-std text-margin-bottom-1" role="button" href="https://account.smartmusic.com/signup?utm_source=smartmusic&#038;utm_medium=site&#038;utm_campaign=performer&#038;utm_content=home_buy_now">buy now</a><br /><a id="performLearnMore" class="btn btn-md btn-secondary btn-width-std" role="button" href="/pricing/#performer">learn more</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="testimonials" class="container spacing-lg">
+<div class="row">
+<div class="col-md testimonial">
+<p class="text-margin-bottom-0"><img src="//wpmedia.smartmusic.com/wp-content/uploads/2019/04/JPierce.png" alt="Justin Pierce " /></p>
+<div class="quote">
+<blockquote><p>&#8220;The new SmartMusic provides a greater level of accessibility to my students. Anyone with a computer, Chromebook, or iPad is able to access assignments and benefit from this valuable software. The newest addition of the Sight Reading Builder is revolutionary!&#8221;</p></blockquote>
+<p class="quote-attr">Justin Pierce</p>
+<p>Professor in Instrumental Music // Oklahoma Baptist University</p>
+</div>
+</div>
+<div class="col-md testimonial">
+<p class="text-margin-bottom-0"><img src="//wpmedia.smartmusic.com/wp-content/uploads/2019/04/MClark.png" alt="Elisa Jones" /></p>
+<div class="quote">
+<blockquote><p>&#8220;The quality of the playing tests are so much better with the web-based version than the classic. I can really hear how students are playing the assignments. The other feature that I really like with the web-based is the practice analysis. Being able to track my students usage on SmartMusic has really helped them reach their individual goals.&#8221;</p></blockquote>
+<p class="quote-attr">Melissa Clark</p>
+<p>String Teacher Grades 4-8 // Lawrence Township Public Schools</p>
+</div>
+</div>
+<div class="col-md testimonial">
+<p class="text-margin-bottom-0"><img src="//wpmedia.smartmusic.com/wp-content/uploads/2019/04/JKDiamond.png" alt="Katie Wardrobe" /></p>
+<div class="quote">
+<blockquote><p>&#8220;The new SmartMusic is much better than the older classic SmartMusic. Using the Sight Reading Builder we were able to double the number of students we had from our district in the all-state bands.&#8221;</p></blockquote>
+<p class="quote-attr">J. Kelly Diamond</p>
+<p>Band Teacher // Georgetown Middle School</p>
+</div>
+</div>
+</div>
+<div class="spacing-lg-top">
+<a class="btn btn-lg btn-secondary btn-width-std btn-block btn-center-h" role="button" href="/testimonials">read more</a>
+</div>
+</section>
+<p><script>
+(function(){
+const imgArray = ["https://wpmedia.smartmusic.com/wp-content/uploads/2019/07/SM_Home_v1.jpg", "https://wpmedia.smartmusic.com/wp-content/uploads/2019/07/SM_Home_v2.jpg", "https://wpmedia.smartmusic.com/wp-content/uploads/2019/07/SM_Home_v3.jpg", "https://wpmedia.smartmusic.com/wp-content/uploads/2019/07/SM_Home_v4.jpg", "https://wpmedia.smartmusic.com/wp-content/uploads/2019/07/SM_Home_v5.jpg"];
+const siteBannerElement = document.querySelector(".site-banner");
+const randomImgValue = Math.floor(Math.random() * imgArray.length);
+siteBannerElement.setAttribute("style", `background-image: url(${imgArray[randomImgValue]});`);
+})()
+</script><br />
+  <script type="text/javascript">
+        window.addEventListener('load', (event) => {
+            document.getElementById("homeTeachBuyNow").addEventListener("click", trackTeacherHome);
+            document.getElementById("homePerformBuyNow").addEventListener("click", trackPerformerHome);
+            document.getElementById("teachLearnMore").addEventListener("click", trackTeachLearn);
+            document.getElementById("academicLearnMore").addEventListener("click", trackAcademicLearn);
+            document.getElementById("performLearnMore").addEventListener("click", trackPerformLearn);
+        });
+        function trackTeacherHome() {
+            analytics.track('Product Clicked', {
+                    product_id: 'SM-EDU-PREM-SELF-12',
+                    sku: 'SM-EDU-PREM-SELF-12',
+                    name: '12 Month Teacher Subscription',
+                    price: 80,
+                    quantity: 1,
+                    position: 3,
+                    url: 'https://account.smartmusic.com/signup?utm_source=smartmusic&utm_medium=site&utm_campaign=teacher&utm_content=home_buy_now'
+            });
+        }
+        function trackPerformerHome() {
+            analytics.track('Product Clicked', {
+                product_id: 'SMW-PI-12',
+                sku: 'SMW-PI-12',
+                name: '12 Month Performer Subscription',
+                price: 40,
+                quantity: 1,
+                position: 4,
+                url: 'https://account.smartmusic.com/signup?utm_source=smartmusic&utm_medium=site&utm_campaign=performer&utm_content=home_buy_now'
+            });
+        }
+        function trackTeachLearn() {
+            analytics.track('Product Viewed', {
+                    product_id: 'SM-EDU-PREM-SELF-12',
+                    sku: 'SM-EDU-PREM-SELF-12',
+                    name: 'Learn More 12 Month Teacher Subscription',
+                    price: 80,
+                    quantity: 1,
+                    position: 1,
+                    url: 'https://www.smartmusic.com/pricing/?utm_source=smartmusic&utm_medium=site&utm_campaign=teacher&utm_content=home_learn_more'
+            });
+        }
+        function trackAcademicLearn() {
+            analytics.track('Product Viewed', {
+                    name: 'Learn More Academic Pricing',
+                    price: 0,
+                    quantity: 1,
+                    position: 2,
+                    url: 'https://www.smartmusic.local/pricing/?utm_source=smartmusic&utm_medium=site&utm_campaign=academic&utm_content=home_learn_more'
+            });
+        }
+         function trackPerformLearn() {
+            analytics.track('Product Viewed', {
+                product_id: 'SMW-PI-12',
+                sku: 'SMW-PI-12',
+                name: 'Learn More 12 Month Performer Subscription',
+                price: 40,
+                quantity: 1,
+                position: 3,
+                url: 'https://www.smartmusic.com/pricing/?utm_source=smartmusic&utm_medium=site&utm_campaign=performer&utm_content=home_learn_more'
+            });
+        }
+</script></p>
+            
+        </main>
+    </div>
+
+
+						</div>		
+<footer class="site-footer spacing-sm-top spacing-md-bottom">
+        <div class="container footer-widgets">
+        
+<section class="footer-widget">
+    <nav class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-21313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21313"><a href="https://www.smartmusic.com/support/">support</a></li>
+<li id="menu-item-21183" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21183"><a target="_blank" rel="noopener noreferrer" href="http://www.makemusic.com/contact-us/">contact us</a></li>
+<li id="menu-item-26984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26984"><a href="https://www.smartmusic.com/educator-resources/">educator resources</a></li>
+<li id="menu-item-29175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29175"><a href="https://www.smartmusic.com/parents/">parent resources</a></li>
+<li id="menu-item-26315" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26315"><a href="https://www.makemusic.com/terms-conditions/">terms + conditions</a></li>
+<li id="menu-item-26316" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26316"><a href="https://www.makemusic.com/privacy/">privacy statement</a></li>
+</ul></nav>    <nav class="menu-footer-container"><ul id="menu-footer-2" class="menu"><li id="menu-item-32022" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32022"><a href="https://store.makemusic.com/Redeem/Default.aspx?_ga=2.101472002.2017828114.1563808026-2004009294.1562786350">redeem a code</a></li>
+<li id="menu-item-32023" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32023"><a href="https://store.makemusic.com/Downloads/SmartMusicDownload.aspx?_ga=2.97140191.1197495059.1564411948-2004009294.1562786350">download</a></li>
+<li id="menu-item-32025" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32025"><a href="https://itunes.apple.com/us/app/smartmusic/id638851328?mt=8#">download for iPad</a></li>
+<li id="menu-item-32026" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32026"><a href="https://store.makemusic.com/MyAccount/MySoftware.aspx">my account</a></li>
+<li id="menu-item-32027" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32027"><a href="https://www.smartmusic.com/classic/">learn more</a></li>
+</ul></nav></section>
+<section class="footer-widget">
+    <a href="https://www.makemusic.com/about" target="_blank" rel="noopener">
+        <img src="//wpmedia.finalemusic.com/wp-content/uploads/2018/01/logo-mm_align_right.svg" alt="MakeMusic, Inc" width="200px" />
+    </a>
+    <address class="footer-address">7007 winchester circle // boulder, co // 80301</address>
+    <div class="social-icons footer-social">
+        <a href="https://www.facebook.com/SmartMusic/" title="Facebook" target="_blank" rel="noopener">
+            <div class="icon-container facebook" id="facebook">
+                <img class="icon" src="//wpmedia.finalemusic.com/wp-content/uploads/2018/01/social-facebook.svg" alt="Facebook" width="9px" />
+            </div>
+        </a>
+        <a href="https://twitter.com/SmartMusic" title="Twitter" target="_blank" rel="noopener">
+            <div class="icon-container twitter" id="twitter">
+                <img class="icon" src="//wpmedia.finalemusic.com/wp-content/uploads/2018/01/social-twitter.svg" alt="Twitter" width="18px" />
+            </div>
+        </a>
+        <a href="https://www.youtube.com/channel/UCrKzEPZQOKSGAQtE1UrfizA" title="Youtube" target="_blank" rel="noopener">
+            <div class="icon-container youtube" id="youtube">
+                <img class="icon" src="//wpmedia.finalemusic.com/wp-content/uploads/2018/01/social-youtube.svg" alt="Youtube" width="20px" />
+            </div>
+        </a>
+    </div>
+    </section>
+<script type="text/javascript">
+    (function() {
+        jQuery(document).ready(function(){
+            jQuery(document).bind('gform_confirmation_loaded', function(event, formId) {
+                var gfEventId = 'gf.ID' + formId;
+                dataLayer.push({'event': gfEventId});
+                window.sessionStorage.clear();
+            });
+        });
+    })();
+</script>
+        
+    </div>
+</footer>		</div>	<script type='text/javascript' src='https://www.smartmusic.com/wp-content/themes/smartmusic/assets-v2/js/dist/base/main.min.js?ver=1583167354'></script>
+<script type='text/javascript' src='https://www.smartmusic.com/wp-content/themes/smartmusic/assets-v2/js/dist/theme/theme.min.js?ver=1583167354'></script>
+<script type='text/javascript' src='https://www.smartmusic.com/wp-content/plugins/metronet-profile-picture/js/mpp-frontend.js?ver=2.3.10'></script>
+<script type='text/javascript' src='https://www.smartmusic.com/wp-content/themes/smartmusic/assets-v2/js/dist/pages/front-page-video/index.min.js?ver=1583167354'></script>
+	</body>
+</html>
